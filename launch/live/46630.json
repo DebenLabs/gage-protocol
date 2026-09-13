@@ -1,0 +1,102 @@
+{
+  "chainId": 46630,
+  "deployer": "0xa9CCD2D1fC2DFc61Da18cf007f906bDf687407a8",
+  "PoolManager": "0x751562f1BD14925769E8641436fcFaCf51fF5740",
+  "PositionManager": "0x955F0Ebbdd848dA72894F745fD3eDFfEe9905e56",
+  "Permit2": "0x000000000022D473030F116dDEE9F6B43aC78BA3",
+  "StateView": "0x780190f07C7847C7b87B998Ee14455BABA6e8618",
+  "USDG": "0x63667749Df3537080C0992231a83f6783729c3C6",
+  "NVDAx": "0x8B33d97f0c1C93f61BF078F3E25Aa6909375DAe2",
+  "MockUniversalRouter": "0xe5Dd514b9A18dfcd45a6a9a4BAfC393C38fd7497",
+  "CollateralRegistry": "0x0f9747a3E4DDC695d47D654a2878A7f7140daA5A",
+  "FeeSink": "0x29C4B9D77050b54a30df68B3C3a9782bf129Fa7a",
+  "DealVault": "0x592148d8586D749680dDd43f919379cfAbfE9EAF",
+  "EntryRouter": "0x1B7e9878223DbC2739468fEd3b520AD9BFec546C",
+  "Emissions": "0xACe40C3f469735D262f67096394C6C65edB989A8",
+  "sGAGE": "0xd1870FC0621861001bbB1d2d344e5920d8770d50",
+  "Drip": "0xB6385Cca774aa0926E585F717630f96394e6e1aB",
+  "DealRewards": "0xe089871073cd7C9200bC9ef6Dacfbaa65679188b",
+  "LPHook": "0x08B3F1b13a695BA4b4d31d9B1402B2EE98FB0500",
+  "CompoundingSeedBootstrap": "0x9B18B422693BFF626271Ef529BCAB169741921f3",
+  "RehearsalLaunch": "0x5F3Ec277102e2ac19FA10463C80543df03E24C76",
+  "GAGE": "0xDB60383eEa1896b7de6e49eC51Ad9eb944439559",
+  "LPRewards": "0x8484a1e9a0CB7184a99872B044EE8DD40f53BC30",
+  "CreatorFeeSplitter": "0x91682d302C16C5fFA657C90577AeC794659aD721",
+  "DealFeeRouter": "0x4741Ab04972C7cF2CfcBb6A543Cfa09b64469bb9",
+  "ReinvestRouter": "0x297A4AB0aB9983c1C95eD3cef94e6b53533AaC6b",
+  "CompoundingSeedTimelock": "0x28908c0dF34Bb5166CE6cC5157a7cFf8d8c84ad0",
+  "RehearsalActivity": "0xcF595284633Cf0b6BfE0a98e6F8125cf1a02a482",
+  "RehearsalLPMarket": "0x50b0C022dAe77a7Fc84c3001C9cF27628E9Afb44",
+  "RehearsalMeme": "0xf4Dfae7BE502460bEB1765F2De3FD1b7C48C1cb8",
+  "pools": {
+    "gageEth": {
+      "currency0": "0x0000000000000000000000000000000000000000",
+      "currency1": "0xDB60383eEa1896b7de6e49eC51Ad9eb944439559",
+      "fee": 3000,
+      "tickSpacing": 60,
+      "hooks": "0x0000000000000000000000000000000000000000",
+      "poolId": "0xc26b507912c7c50b5e26f89880fbce24636ae8f779636ff27d24fc0d69e18e16"
+    },
+    "gageSgage": {
+      "currency0": "0xd1870FC0621861001bbB1d2d344e5920d8770d50",
+      "currency1": "0xDB60383eEa1896b7de6e49eC51Ad9eb944439559",
+      "fee": 30000,
+      "tickSpacing": 60,
+      "hooks": "0x08B3F1b13a695BA4b4d31d9B1402B2EE98FB0500",
+      "poolId": "0x67361e23f2fda131d180eac1aaf0d46ff22b5e6b5e6aa8680a227f73d14acfd8"
+    },
+    "usdgEth": {
+      "currency0": "0x0000000000000000000000000000000000000000",
+      "currency1": "0x63667749Df3537080C0992231a83f6783729c3C6",
+      "fee": 3000,
+      "tickSpacing": 60,
+      "hooks": "0x0000000000000000000000000000000000000000",
+      "poolId": "0x811fb82534d8bf93a0883fb40a1f7aeeee0264a37dc592ed623a011ad6740ec9"
+    },
+    "memeStock": {
+      "currency0": "0x8b33d97f0c1c93f61bf078f3e25aa6909375dae2",
+      "currency1": "0xf4dfae7be502460beb1765f2de3fd1b7c48c1cb8",
+      "fee": 3000,
+      "tickSpacing": 60,
+      "hooks": "0x0000000000000000000000000000000000000000",
+      "poolId": "0x3872dfe4631bb1d0ea5a88dc95a0ec35bbf4b9f319c683105a0e75295c216cbe"
+    },
+    "nvdaUsdg": {
+      "currency0": "0x63667749Df3537080C0992231a83f6783729c3C6",
+      "currency1": "0x8B33d97f0c1C93f61BF078F3E25Aa6909375DAe2",
+      "fee": 3000,
+      "hooks": "0x0000000000000000000000000000000000000000",
+      "poolId": "0x7a55109bfedaa5e22e17c23f2be37a253954f9bd4e6ee56c6c67036bf4292472",
+      "tickSpacing": 60
+    }
+  },
+  "startBlock": 114994692,
+  "readyBlock": 115004576,
+  "launchStatus": {
+    "phase": "active",
+    "releaseHash": "dcf276d9a6d0de3d04bf93ff73e237d65115b088428dbffafcb0310cebed921c",
+    "journalHash": "1b09065a32d9da5587f890a48ed417c3b8320b159d76053258617b256e2fb85a"
+  },
+  "rehearsal": {
+    "phase": "active",
+    "owner": "0xa9CCD2D1fC2DFc61Da18cf007f906bDf687407a8",
+    "seedFeeMode": "compound"
+  },
+  "FeeFloor": "0x91682d302C16C5fFA657C90577AeC794659aD721",
+  "feePolicy": "D57-floor-v1",
+  "SeedTimelock": "0x28908c0dF34Bb5166CE6cC5157a7cFf8d8c84ad0",
+  "seedTokenId": 35,
+  "seed": {
+    "tokenId": "35",
+    "releaseAt": 1820337324,
+    "owner": "0xa9CCD2D1fC2DFc61Da18cf007f906bDf687407a8",
+    "codeHash": "0xf8550f1b8fb2c3c9eebd6cbcba6d15981232229cf6d93e49ab7cf3d49e77a762"
+  },
+  "collateralUpdate": {
+    "planHash": "7dfdea872e14b9e981596b04a056217de597f2903c77bdacf77f03544064cb76",
+    "block": 115004576,
+    "transactions": [
+      "0x13323641e123dd3cdf8d25ef8b87209919fa60383070c64f9708cbbd3cb7ba8e"
+    ]
+  }
+}

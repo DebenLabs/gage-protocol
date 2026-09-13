@@ -1,0 +1,36 @@
+{
+  "name": "@gage/indexer",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "gage indexer and read API: rebuilds deals, bids, balances, assets and the token layer from events on Robinhood Chain.",
+  "scripts": {
+    "dev": "ponder dev",
+    "start": "ponder start",
+    "serve": "ponder serve",
+    "build": "ponder codegen",
+    "codegen": "ponder codegen",
+    "abis": "node scripts/sync-abis.mjs",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "test:earn:rehearsal": "node scripts/earn-rehearsal.mjs"
+  },
+  "dependencies": {
+    "hono": "^4.6.0",
+    "pg": "8.23.0",
+    "ponder": "0.17.9",
+    "viem": "^2.35.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.0.0",
+    "@types/node": "^22.0.0",
+    "eslint": "^9.0.0",
+    "typescript": "^5.6.0",
+    "typescript-eslint": "^8.0.0",
+    "vitest": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

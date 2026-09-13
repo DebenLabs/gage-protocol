@@ -1,0 +1,20 @@
+title = "Gage public source"
+
+[extend]
+useDefault = true
+
+# A 20-byte EVM address is public identity, not a private signing key.
+# Keep this exception on the generic detector; never suppress a whole source path.
+[[rules]]
+id = "generic-api-key"
+[[rules.allowlists]]
+description = "Exact 20-byte public EVM addresses"
+regexTarget = "secret"
+regexes = ['''^0x[0-9a-fA-F]{40}$''']
+
+[[rules]]
+id = "evm-signing-key-assignment"
+description = "Literal EVM signing keys assigned to signing-key variables"
+regex = '''(?i)(?:private[_-]?key|keeper[_-]?key|deployer[_-]?key|signer[_-]?key)\s*[=:]\s*["']?(0x[0-9a-f]{64})'''
+secretGroup = 1
+keywords = ["private", "keeper", "deployer", "signer"]

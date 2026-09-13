@@ -1,0 +1,32 @@
+{
+  "name": "@gage/valuation",
+  "version": "0.1.0",
+  "private": true,
+  "description": "gage valuation, suggested range, reinvest and entry quotes, and meme token screening",
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "dev": "node --experimental-sqlite --env-file-if-exists=.env --import tsx --watch src/index.ts",
+    "start": "node --experimental-sqlite --env-file-if-exists=.env dist/index.js",
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "eslint src test",
+    "test": "node --experimental-sqlite node_modules/vitest/vitest.mjs run",
+    "ratings:evaluate": "node --import tsx src/ratings/evaluate.ts",
+    "ratings:capture": "node --experimental-sqlite --import tsx src/ratings/capture.ts"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.13.7",
+    "hono": "^4.6.14",
+    "viem": "^2.21.55"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.17.0",
+    "@types/node": "^22.10.2",
+    "eslint": "^9.17.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "typescript-eslint": "^8.18.1",
+    "vitest": "^2.1.8"
+  }
+}

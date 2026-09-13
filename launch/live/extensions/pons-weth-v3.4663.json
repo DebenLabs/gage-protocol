@@ -1,0 +1,49 @@
+{
+  "chainId": 4663,
+  "vaultVersion": 3,
+  "DealVault": "0xe3628a01eaca2e7b0EC71Ed7bA616b997fEf9cDE",
+  "CollateralRegistry": "0x38e9D1c40bCf6cD630b01C4a11a7bCe8BcfDE51f",
+  "FeeSink": "0x9bB55eD269D0096D50ecD08e34C283362d215f32",
+  "EntryRouter": "0x85A2c1Ca936d2528032B2BEb8ACd3e4D99826AAd",
+  "USDG": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+  "PONS": "0x39dBED3a2bd333467115dE45665cC57F813C4571",
+  "WETH": "0x0Bd7D308f8E1639FAb988df18A8011f41EAcAD73",
+  "UniversalRouter": "0x8876789976dEcBfCbBbe364623C63652db8C0904",
+  "PoolManager": "0x8366a39CC670B4001A1121B8F6A443A643e40951",
+  "PositionManager": "0x73991a25C818Bf1f1128dEAaB1492D45638DE0D3",
+  "V3Factory": "0x1f7d7550B1b028f7571E69A784071F0205FD2EfA",
+  "StateView": "0xF3334192D15450CdD385c8B70e03f9A6bD9E673b",
+  "pools": {
+    "ponsWeth": {
+      "protocol": "v3",
+      "poolAddress": "0x10CC6BD38112cAc182db90B6a71d8Bb5939526bA",
+      "currency0": "0x0Bd7D308f8E1639FAb988df18A8011f41EAcAD73",
+      "currency1": "0x39dBED3a2bd333467115dE45665cC57F813C4571",
+      "fee": 10000,
+      "tickSpacing": 200,
+      "hooks": "0x0000000000000000000000000000000000000000",
+      "poolId": "0x00000000000000000000000010cc6bd38112cac182db90b6a71d8bb5939526ba"
+    },
+    "ponsUsdg": {
+      "currency0": "0x39dbed3a2bd333467115de45665cc57f813c4571",
+      "currency1": "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+      "fee": 3000,
+      "tickSpacing": 60,
+      "hooks": "0x0000000000000000000000000000000000000000",
+      "poolId": "0x4be9657ec9002e528f4f17a5c43edc525a07f888f7b180c2afbf75e096c4f38a",
+      "createdAt": 1784338933,
+      "createdBlock": 12594350
+    },
+    "usdgEth": {
+      "currency0": "0x0000000000000000000000000000000000000000",
+      "currency1": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+      "fee": 100,
+      "tickSpacing": 1,
+      "hooks": "0x0000000000000000000000000000000000000000",
+      "poolId": "0x24107d152f14a76d292123265ae3f3c71f863fc2f4ef7ba49d64e78d28ea379e"
+    }
+  },
+  "startBlock": 57272387,
+  "readyBlock": 57275500,
+  "rewards": "disabled"
+}

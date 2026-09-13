@@ -1,0 +1,127 @@
+{
+  "AAPLx": "0xb33e9692Eb675Ca5cC7fd309c8cFBd24c877ae88",
+  "APEPE": "0x5d7785BE0B8df37a82A0AA8a82EBc118624cfcf5",
+  "Buyback": "0xB4994b07aa111b41dFfa4877c6AD76ad52038Cde",
+  "CollateralRegistry": "0x9A62ffeE55919830F42F0C68F65320551E62713c",
+  "CreatorFeeSplitter": "0x2b4A0833E5D80BfCE0f30362177d25fa3ee1553C",
+  "DealRewards": "0x560d385876DD9F2ad859fEFE4feAb258aD46eE31",
+  "DealVault": "0x5200d8AAf542d8Fb840d70d3D0CEEd7096d50878",
+  "Drip": "0x3fC204575C3A2c6845694ac8fd15049CEcFA3f21",
+  "Emissions": "0x92635778d941A7fa1cf53B751B18888f6Bb37cC9",
+  "EntryRouter": "0x552eaCd69dcE12c4B74fE39249708b5CB41d781f",
+  "FeeSink": "0x7C2cA1866f46473A57C21B51Bb8d3e4Bfad937d8",
+  "GAGE": "0x9f41816188000054160425067894aBd36fcb29fD",
+  "LPHook": "0xc70dBcA57e6204c2e8be7369869E89510Aa74500",
+  "LPRewards": "0xA04103d3a9957b3fcf5C3157BB2BFbb4BE1734a5",
+  "LiquidityRouter": "0x9a65eEE83Fc1AFc88927915078962c47c32DD262",
+  "MOON": "0x77664E9854A2E5e3fB182e409b4B959dFA775cb0",
+  "MSFTx": "0xF68509e17120c2789e7c92181E729473542f7F42",
+  "MockUniversalRouter": "0xe5Dd514b9A18dfcd45a6a9a4BAfC393C38fd7497",
+  "NVDAx": "0x8B33d97f0c1C93f61BF078F3E25Aa6909375DAe2",
+  "NVDOG": "0x916f78F15F3f6E1f3784eECd1285dcfC37733513",
+  "Permit2": "0x000000000022D473030F116dDEE9F6B43aC78BA3",
+  "PoolManager": "0x751562f1BD14925769E8641436fcFaCf51fF5740",
+  "PositionManager": "0x955F0Ebbdd848dA72894F745fD3eDFfEe9905e56",
+  "ReinvestRouter": "0x5BcA0532093Ab6670E4C17BA688A4916AE6a7db1",
+  "SeedTimelock": "0x6F922c376ff87B0BFa600D208B980CCd56f9d126",
+  "StateView": "0x780190f07C7847C7b87B998Ee14455BABA6e8618",
+  "SwapRouter": "0x4C61B4562fd634829C9A0909263BAf01A7024213",
+  "TSLAx": "0x30F98CFc749B240f0840F089653803594C1b3db8",
+  "USDG": "0x63667749Df3537080C0992231a83f6783729c3C6",
+  "borrower": "0x014Bf210F4CDAA11b1Faad9F7F6Bf2F42e6516a4",
+  "borrowerPositionId": 29,
+  "chainId": 46630,
+  "deployer": "0xa9CCD2D1fC2DFc61Da18cf007f906bDf687407a8",
+  "lender": "0x20a55a2C7026099C5dC20A71858c0cE5CD9d91A9",
+  "pools": {
+    "aaplUsdg": {
+      "createdAt": 1788770052,
+      "currency0": "0x63667749Df3537080C0992231a83f6783729c3C6",
+      "currency1": "0xb33e9692Eb675Ca5cC7fd309c8cFBd24c877ae88",
+      "fee": 3000,
+      "hooks": "0x0000000000000000000000000000000000000000",
+      "poolId": "0x2ae754ad2375d6a5525ff30986d9e5f4a461ade1ebedb3f984fbb3e44efe22c3",
+      "tickSpacing": 60
+    },
+    "apepeAapl": {
+      "createdAt": 1788770052,
+      "currency0": "0x5d7785BE0B8df37a82A0AA8a82EBc118624cfcf5",
+      "currency1": "0xb33e9692Eb675Ca5cC7fd309c8cFBd24c877ae88",
+      "fee": 3000,
+      "hooks": "0x0000000000000000000000000000000000000000",
+      "poolId": "0x1f933431814b63135bdca0666c1efa71a0598b769d8f96131e2e4f00373af1de",
+      "tickSpacing": 60
+    },
+    "gageEth": {
+      "currency0": "0x0000000000000000000000000000000000000000",
+      "currency1": "0x9f41816188000054160425067894aBd36fcb29fD",
+      "fee": 3000,
+      "hooks": "0x0000000000000000000000000000000000000000",
+      "poolId": "0xfc33ac7176f033726b4fd011912ce3729685baafc1e9b08f199b28547f827e98",
+      "tickSpacing": 60
+    },
+    "gageSgage": {
+      "currency0": "0x98ca40f889B4f1107E05f597D221896D1c5D5114",
+      "currency1": "0x9f41816188000054160425067894aBd36fcb29fD",
+      "fee": 30000,
+      "hooks": "0xc70dBcA57e6204c2e8be7369869E89510Aa74500",
+      "poolId": "0x950136325c9412c8bff43976022ff80a01e91d90d976bf3def0a6c1d6e1bc5a5",
+      "tickSpacing": 60
+    },
+    "moonUsdg": {
+      "createdAt": 1788770052,
+      "currency0": "0x63667749Df3537080C0992231a83f6783729c3C6",
+      "currency1": "0x77664E9854A2E5e3fB182e409b4B959dFA775cb0",
+      "fee": 3000,
+      "hooks": "0x0000000000000000000000000000000000000000",
+      "poolId": "0x98feabb1f59e6d8af22010c2a6580e053e573a9012d11343bf2d3785d4e21288",
+      "tickSpacing": 60
+    },
+    "msftUsdg": {
+      "createdAt": 1788770052,
+      "currency0": "0x63667749Df3537080C0992231a83f6783729c3C6",
+      "currency1": "0xF68509e17120c2789e7c92181E729473542f7F42",
+      "fee": 3000,
+      "hooks": "0x0000000000000000000000000000000000000000",
+      "poolId": "0x24f63247f7ca3be288b9ebceeaccfcc2418eb44943b1f68a267ccc6512385421",
+      "tickSpacing": 60
+    },
+    "nvdaUsdg": {
+      "currency0": "0x63667749Df3537080C0992231a83f6783729c3C6",
+      "currency1": "0x8B33d97f0c1C93f61BF078F3E25Aa6909375DAe2",
+      "fee": 3000,
+      "hooks": "0x0000000000000000000000000000000000000000",
+      "poolId": "0x7a55109bfedaa5e22e17c23f2be37a253954f9bd4e6ee56c6c67036bf4292472",
+      "tickSpacing": 60
+    },
+    "nvdogNvda": {
+      "currency0": "0x8B33d97f0c1C93f61BF078F3E25Aa6909375DAe2",
+      "currency1": "0x916f78F15F3f6E1f3784eECd1285dcfC37733513",
+      "fee": 3000,
+      "hooks": "0x0000000000000000000000000000000000000000",
+      "poolId": "0xd819bbf561193f7ddeebf2f280dacb2241e25ea3f9135fc839c05b9c1bab1185",
+      "tickSpacing": 60
+    },
+    "tslaUsdg": {
+      "createdAt": 1788770052,
+      "currency0": "0x30F98CFc749B240f0840F089653803594C1b3db8",
+      "currency1": "0x63667749Df3537080C0992231a83f6783729c3C6",
+      "fee": 3000,
+      "hooks": "0x0000000000000000000000000000000000000000",
+      "poolId": "0x8036f80adee34e4c2034ad0fe762a921d77098e9e677462e1196920dcf715db0",
+      "tickSpacing": 60
+    },
+    "usdgEth": {
+      "currency0": "0x0000000000000000000000000000000000000000",
+      "currency1": "0x63667749Df3537080C0992231a83f6783729c3C6",
+      "fee": 3000,
+      "hooks": "0x0000000000000000000000000000000000000000",
+      "poolId": "0x811fb82534d8bf93a0883fb40a1f7aeeee0264a37dc592ed623a011ad6740ec9",
+      "tickSpacing": 60
+    }
+  },
+  "positionDealId": 14,
+  "reinvestTokenId": 30,
+  "sGAGE": "0x98ca40f889B4f1107E05f597D221896D1c5D5114",
+  "seedTokenId": 28
+}

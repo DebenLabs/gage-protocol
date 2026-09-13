@@ -1,0 +1,66 @@
+import { afterEach, describe, expect, it, vi } from "vitest";
+import { readFileSync } from "node:fs";
+import { parseDeployment } from "../src/deployment.js";
+import { SampleStore } from "../src/facts/store.js";
+import { seedAdmissionHistory } from "../src/facts/admission-history.js";
+import history from "../src/history/tendies-4663.json" with { type: "json" };
+import pons from "../src/history/pons-4663.json" with { type: "json" };
+import { maxDrawdown } from "../src/math/stats.js";
+const candidate = JSON.parse(readFileSync(new URL("./fixtures/tendies-deployment.json", import.meta.url), "utf8"));
+const token = "0x45242320dbb855eea8fd36804c6487e10e97fcf9";
+afterEach(() => vi.restoreAllMocks());
+describe("TENDIES ERC20 admission", () => {
+  it("retains the existing vault and matches its disclosure to the exact pricing pool", () => {
+    const d = parseDeployment(candidate);
+    expect(d.vaultVersion).toBe(1);
+    expect(d.positionManager).toBe("0x58daec3116aae6d93017baaea7749052e8a04fa7");
+    expect(d.pools.tendiesWeth?.protocol).toBe("v3");
+    expect(d.collateralNotes?.[token]?.poolId).toBe(d.pools.tendiesWeth?.poolId);
+    const bad = structuredClone(candidate);
+    bad.collateralNotes[token].poolId = bad.pools.usdgEth.poolId;
+    expect(() => parseDeployment(bad)).toThrow(/pool mismatch/);
+  });
+  it("seeds measured history once and rejects a different pool identity", () => {
+    vi.spyOn(Date, "now").mockReturnValue(1788886232000);
+    const d = parseDeployment(candidate), store = SampleStore.inMemory();
+    seedAdmissionHistory(store, d);
+    expect(store.tokenSamples(token, 0)).toHaveLength(168);
+    seedAdmissionHistory(store, d);
+    expect(store.tokenSamples(token, 0)).toHaveLength(168);
+    const wrong = SampleStore.inMemory();
+    d.pools.tendiesWeth!.currency1 = d.usdg;
+    seedAdmissionHistory(wrong, d);
+    expect(wrong.tokenSamples(token, 0)).toHaveLength(0);
+  });
+  it("repairs only exact legacy prices, preserves raw market caps and sorts mixed imported/live history", () => {
+    vi.spyOn(Date, "now").mockReturnValue(1788886232000);
+    const d = parseDeployment(candidate), store = SampleStore.inMemory();
+    for (const sample of history.samples) store.addTokenSample(token, { ...sample });
+    store.addTokenSample(token, { at: 1788882000, priceUSDG: "0.015", mcapUSDG: "15000000000000" });
+    seedAdmissionHistory(store, d);
+    const samples = store.tokenSamples(token, 0), first = samples.find(s => s.at === history.samples[0]!.at)!;
+    expect(first.priceUSDG).toBe("0.015308380143769");
+    expect(first.mcapUSDG).toBe(history.samples[0]!.mcapUSDG);
+    expect(samples.every((s, i) => i === 0 || s.at > samples[i - 1]!.at)).toBe(true);
+    expect(maxDrawdown(samples.map(s => ({ at: s.at, price: Number(s.priceUSDG) })))!).toBeLessThan(0.9);
+    const snapshot = structuredClone(samples);
+    seedAdmissionHistory(store, d);
+    expect(store.tokenSamples(token, 0)).toEqual(snapshot);
+    const unrelated = SampleStore.inMemory();
+    unrelated.addTokenSample(token, { ...history.samples[0]!, priceUSDG: "0.0123" });
+    seedAdmissionHistory(unrelated, d);
+    expect(unrelated.tokenSamples(token, 0).find(s => s.at === history.samples[0]!.at)?.priceUSDG).toBe("0.0123");
+  });
+  it("normalizes the reviewed PONS export without changing supply values or double scaling", () => {
+    vi.spyOn(Date, "now").mockReturnValue(1788886232000);
+    const d = parseDeployment(candidate), store = SampleStore.inMemory();
+    for (const sample of pons.samples) store.addTokenSample(pons.token, { ...sample });
+    seedAdmissionHistory(store, d);
+    const samples = store.tokenSamples(pons.token, 0);
+    expect(samples[0]).toEqual({ ...pons.samples[0], priceUSDG: "0.379569" });
+    expect(samples).toHaveLength(pons.samples.length);
+    const snapshot = structuredClone(samples);
+    seedAdmissionHistory(store, d);
+    expect(store.tokenSamples(pons.token, 0)).toEqual(snapshot);
+  });
+});

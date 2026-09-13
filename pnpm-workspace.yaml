@@ -1,0 +1,5 @@
+packages:
+  - "services/indexer"
+  - "services/keeper"
+  - "services/valuation"
+  - "services/notifier"

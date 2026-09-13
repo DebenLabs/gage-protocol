@@ -1,0 +1,34 @@
+# Credentials and private operational state
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+!**/.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+.launch/
+.rehearsal/
+# Generated outputs and local state
+node_modules/
+**/node_modules/
+**/dist/
+**/.ponder/
+**/data/
+**/out/
+**/cache/
+contracts/out-v2/
+contracts/cache-v2/
+contracts/broadcast/
+contracts/deployments/*-rehearsal.json
+*.sqlite*
+*.db
+*.log
+*.tsbuildinfo
+**/__pycache__/
+output/
+artifacts/
+.vercel/
+.DS_Store

@@ -1,0 +1,27 @@
+{
+  "name": "gage-protocol",
+  "private": true,
+  "packageManager": "pnpm@9.14.4",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "pnpm -r build",
+    "test": "pnpm -r test",
+    "lint": "pnpm -r lint",
+    "typecheck": "pnpm -r typecheck",
+    "test:scripts": "node --test scripts/hybrid/runtime.test.mjs scripts/tests/earn-mandate.test.mjs scripts/tests/earn-receipt.test.mjs",
+    "contracts:build": "python3 scripts/build-contracts.py",
+    "contracts:test": "forge test --root contracts --no-match-path \"test/fork/*\" -vv",
+    "check:publication": "python3 scripts/check-publication.py",
+    "check:secrets": "gitleaks git --redact=100 --log-opts=\"--all\""
+  },
+  "pnpm": {
+    "overrides": {
+      "next@15.5.25>postcss": "8.5.23",
+      "ws@8.18.0": "8.21.0"
+    }
+  },
+  "description": "Gage protocol contracts and Earn audit support services",
+  "license": "MIT"
+}

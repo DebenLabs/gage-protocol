@@ -1,0 +1,31 @@
+{
+  "name": "@gage/keeper",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "gage keeper: permissionless maintenance calls for the vault and token layer, one hot wallet holding gas only",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "start": "node dist/index.js",
+    "once": "tsx src/index.ts --once",
+    "seed": "tsx src/seed-worker.ts",
+    "seed:once": "tsx src/seed-worker.ts --once",
+    "prep-epoch": "tsx src/index.ts --prep-epoch",
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src test",
+    "test": "vitest run",
+    "test:earn:rehearsal": "pnpm build && node scripts/earn-rehearsal.mjs"
+  },
+  "dependencies": {
+    "viem": "^2.56.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.1",
+    "eslint": "^9.39.5",
+    "tsx": "^4.23.13",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.69.0",
+    "vitest": "^4.1.11"
+  }
+}
